@@ -22,10 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Prepare corrected student app
-        run: |
-          mkdir -p _site
-          cp -R docs/. _site
+      - name: Unpack complete student app
+        run: unzip -q github-pages-full.zip -d _site
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
